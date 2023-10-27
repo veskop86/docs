@@ -13,7 +13,7 @@
     "@hilla/generator-typescript-plugin-push": "2.3.0-alpha11",
     "@hilla/generator-typescript-plugin-subtypes": "2.3.0-alpha11",
     "@hilla/generator-typescript-utils": "2.3.0-alpha11",
-    "@hilla/react-components": "2.2.0-beta1",
+    "@hilla/react-components": "2.3.0-alpha7",
     "@material/mwc-slider": "0.27.0",
     "@opentelemetry/exporter-trace-otlp-http": "0.35.0",
     "@opentelemetry/instrumentation": "0.35.0",
@@ -259,7 +259,7 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "5cd3078eaa7afa4d682dcb1571eb4f165611919d0b5e4e1932738f62bf5f120b"
+    "hash": "1e6f4f52eee27902773f62907f03e6917409e742500c0d6ddfb49e56d7abdf0e"
   },
   "overrides": {
     "@vaadin/accordion": "$@vaadin/accordion",
