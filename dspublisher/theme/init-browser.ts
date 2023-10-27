@@ -1,5 +1,4 @@
 import { html, LitElement, nothing } from 'lit';
-import { state } from 'lit/decorators.js';
 import { iframeResizer } from 'iframe-resizer';
 
 // Import all Lumo CSS custom properties into the global style scope
@@ -27,7 +26,7 @@ class Header extends LitElement {
     script.onload = () => (window as any).haas.loader.initMenu();
     script.defer = true;
     script.src =
-      window.location.hostname == 'preview.vaadin.com'
+      window.location.hostname === 'preview.vaadin.com'
         ? 'https://preview.vaadin.com/vaadincom/haas-service/v2/haas-loader.js'
         : 'https://vaadin.com/vaadincom/haas-service/v2/haas-loader.js';
     return script;
@@ -69,10 +68,14 @@ class Footer extends LitElement {
     return this;
   }
 
-  @state()
-  private documentTitle = document.title;
+  static get properties() {
+    return {
+      documentTitle: { type: String },
+    };
+  }
 
   private __titleObserver = new MutationObserver(() => {
+    // @ts-expect-error using static properties in lit-element
     this.documentTitle = document.title;
   });
 
@@ -98,6 +101,8 @@ class Footer extends LitElement {
   }
 
   protected firstUpdated() {
+    // @ts-expect-error using static properties in lit-element
+    this.documentTitle = document.title;
     iframeResizer({ log: true }, '#discussion-iframe');
   }
 
@@ -117,6 +122,7 @@ class Footer extends LitElement {
         : 'https://vaadin.com';
 
     iframeSrc += `/vaadincom/discussion-service/embed.html?root=DOCS&id=${id}&url=${url}&name=${encodeURI(
+      // @ts-expect-error using static properties in lit-element
       this.documentTitle
     )}&description=`;
 
