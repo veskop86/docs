@@ -19,10 +19,12 @@ export class Example extends LitElement {
   }
 
   @query('#start')
-  private accessor start!: DatePicker;
+  // @ts-expect-error: legacy decorators
+  private start: DatePicker;
 
   @query('#end')
-  private accessor end!: DatePicker;
+  // @ts-expect-error: legacy decorators
+  private end: DatePicker;
 
   private binder = new Binder(this, AppointmentModel);
 

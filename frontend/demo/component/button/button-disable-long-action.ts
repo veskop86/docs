@@ -19,10 +19,11 @@ export class Example extends LitElement {
   }
 
   @state()
-  private accessor isDisabled = false;
+  private isDisabled = false;
 
   @query('fake-progress-bar')
-  private accessor fakeProgressBar!: FakeProgressBar;
+  // @ts-expect-error: legacy decorators
+  private fakeProgressBar: FakeProgressBar;
 
   protected override render() {
     return html`

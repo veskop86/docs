@@ -7,10 +7,11 @@ import '@vaadin/horizontal-layout';
 // tag::snippet[]
 export class EventsBasic extends LitElement {
   @state()
-  private accessor caption = 'Click me!';
+  // @ts-expect-error: legacy decorators
+  private caption = 'Click me';
 
   @state()
-  private accessor count = 0;
+  private count = 0;
 
   protected override render() {
     return html`<vaadin-button @click="${this.onClick}">${this.caption}</vaadin-button>`;

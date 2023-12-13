@@ -17,7 +17,8 @@ export class Example extends LitElement {
 
   // tag::snippet[]
   @query('vaadin-date-time-picker')
-  private accessor dateTimePicker!: DateTimePicker;
+  // @ts-expect-error: legacy decorators
+  private dateTimePicker: DateTimePicker;
 
   protected override firstUpdated() {
     this.dateTimePicker.i18n = {

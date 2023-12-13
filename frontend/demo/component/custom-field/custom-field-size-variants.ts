@@ -19,13 +19,15 @@ export class Example extends LitElement {
   }
 
   @query('#amount')
-  private accessor amount!: TextField;
+  // @ts-expect-error: legacy decorators
+  private amount: TextField;
 
   @query('#currency')
-  private accessor currency!: Select;
+  // @ts-expect-error: legacy decorators
+  private currency: Select;
 
   @state()
-  private accessor currencies = [
+  private currencies = [
     { label: 'AUD', value: 'aud' },
     { label: 'CAD', value: 'cad' },
     { label: 'CHF', value: 'chf' },

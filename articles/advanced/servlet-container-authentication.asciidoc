@@ -100,9 +100,9 @@ import { customElement, query } from 'lit/decorators.js';
 @customElement("my-login")
 export class MyLogin extends LitElement {
   @query('#username')
-  private username: any;
+private declare  username: any;
   @query('#password')
-  private password: any;
+private declare  password: any;
 
   render() {
     return html`

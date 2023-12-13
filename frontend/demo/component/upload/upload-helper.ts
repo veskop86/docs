@@ -27,7 +27,8 @@ export class Example extends LitElement {
   }
 
   @query('vaadin-upload')
-  private accessor upload!: Upload;
+  // @ts-expect-error: legacy decorators
+  private upload: Upload;
 
   // tag::snippet[]
   protected override firstUpdated() {

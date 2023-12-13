@@ -18,7 +18,8 @@ export class Example extends LitElement {
   private charLimit = 140;
 
   @state()
-  private accessor text = 'Great job. This is excellent!';
+  // @ts-expect-error: legacy decorators
+  private text = 'Great job. This is excellent';
 
   protected override render() {
     return html`

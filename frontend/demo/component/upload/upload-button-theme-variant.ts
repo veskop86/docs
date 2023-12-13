@@ -22,10 +22,11 @@ export class Example extends LitElement {
   }
 
   @query('vaadin-upload')
-  private accessor upload!: Upload;
+  // @ts-expect-error: legacy decorators
+  private upload: Upload;
 
   @state()
-  private accessor maxFilesReached = false;
+  private maxFilesReached = false;
 
   protected override firstUpdated() {
     this.upload.i18n.dropFiles.one = 'Drop PDF here';

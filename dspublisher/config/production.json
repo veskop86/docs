@@ -4,5 +4,5 @@
     "lit": true,
     "react": false
   },
-  "useStandardDecorators": true
+  "decorators": "legacy"
 }

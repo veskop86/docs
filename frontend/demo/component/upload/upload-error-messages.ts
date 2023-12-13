@@ -23,10 +23,12 @@ export class Example extends LitElement {
   }
 
   @query('#upload-caution')
-  private accessor uploadCaution!: Upload;
+  // @ts-expect-error: legacy decorators
+  private uploadCaution: Upload;
 
   @query('#upload-recommended')
-  private accessor uploadRecommended!: Upload;
+  // @ts-expect-error: legacy decorators
+  private uploadRecommended: Upload;
 
   // tag::snippet[]
   protected override firstUpdated() {
